@@ -5,6 +5,10 @@ import "../styles/LandingPage.css"
 import WallLeft from "../images/sticker-wall-blue-left.png"
 import WallRight from "../images/sticker-wall-blue-right.png"
 
+//icons
+import { FaGithub } from "react-icons/fa";
+import { AiOutlineBehanceSquare } from "react-icons/ai";
+
 const LandingPage = () => {
   return (
     <div className='container' >
@@ -29,6 +33,18 @@ const LandingPage = () => {
             <li>Projetos</li>
             <li>Contato</li>
           </ul>
+        </div>
+
+        <div className="social-media-container flex justify-end mt-5 relative text-gray-500 fade-in">
+          <a href='#'
+            target="_blank" rel="noopener noreferrer" style={{ fontSize: "35px" }}>
+            <AiOutlineBehanceSquare />
+          </a>
+          <a href='https://github.com/olv-stephany'
+            target="_blank" rel="noopener noreferrer" style={{ fontSize: "33px" }}>
+            <FaGithub />
+          </a>
+          <p className='mt-1 text-1xl ml-1 font-bold'> /olv-stephany</p>
         </div>
 
       </section>

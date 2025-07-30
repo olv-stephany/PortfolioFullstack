@@ -44,11 +44,16 @@ h2 {
     height: 4px;
     background-color: #6F7B98;
     border-radius: 2px;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease,  box-shadow 0.3s ease;
 }
 
 .navegation-container li:hover::after{
     width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.social-media-container{
+    top: 65vh;
 }
 
 /*Animaçoes*/
@@ -99,7 +104,7 @@ h2 {
 
 .effect {
     width: 40%;
-    animation: typing 3.2s steps(15), blink .5s step-end infinite alternate;
+    animation: typing 5s steps(15), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 4px solid;
