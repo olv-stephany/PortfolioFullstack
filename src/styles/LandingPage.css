@@ -54,6 +54,16 @@ h2 {
 
 .social-media-container{
     top: 65vh;
+    left: 5vw;
+}
+
+.skills-container {
+   top: 70vh;
+   height: 100vh; /*ajeitar*/
+}
+
+.skills-container h2{
+    font-family: "Rubik", sans-serif;
 }
 
 /*Animaçoes*/
@@ -109,3 +119,5 @@ h2 {
     overflow: hidden;
     border-right: 4px solid;
 }
+
+
