@@ -8,6 +8,11 @@ import { AiOutlineBehanceSquare } from "react-icons/ai";
 //components
 import FrameSticker from '../components/FrameSticker';
 import SoftSkills from '../components/SoftSkills';
+import CardsStacks from '../components/CardsStacks';
+
+//images
+import pages from "../images/stickers/pages-sticker.png"
+import book from "../images/stickers/book-sticker.png"
 
 const LandingPage = () => {
   return (
@@ -45,6 +50,16 @@ const LandingPage = () => {
       <section className="skills-container relative">
         <h2 className='mt-10 md:text-5xl font-medium text-gray-800'>Habilidades</h2>
         <SoftSkills />
+        <CardsStacks />
+        <img
+          src={pages}
+          className="absolute top-[-40px] left-[-245px] w-110 rotate-[-10deg] pointer-events-none z-[-10]"
+          alt="" />
+        <img src={book} alt=""
+          className="absolute top-[40vh] right-[-231px] w-120 pointer-events-none z-[-10]" />
+      </section>
+      <section className="about-container relative">
+        <h2>Sobre</h2>
       </section>
     </div>
   )
