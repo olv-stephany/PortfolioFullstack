@@ -13,7 +13,7 @@ const ExperienceCard = () => {
         Experiências
       </h3>
 
-      <div className="flex items-start gap-3 pl-5">
+      <div className="flex items-start gap-3 pl-0">
         <div className="flex flex-col items-center pt-1">
           <img className="pb-5" src={line} alt="" />
         </div>
@@ -39,7 +39,7 @@ const ExperienceCard = () => {
           {isOpen && (
             <ul className="mt-1 text-sm font-medium text-white/90 list-disc list-inside space-y-1 text-start mb-10">
               <li>
-                <span>Responsável por front-end e design UI/UX</span>
+                <span>Responsável por Front-end e Design UI/UX</span>
               </li>
               <li>
                 <span>

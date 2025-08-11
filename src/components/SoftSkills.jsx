@@ -4,7 +4,7 @@ import softSkills from '../data/SoftSkills'
 
 const SoftSkills = () => {
     return (
-        <div className='soft-skills-container mt-10 flex justify-center gap-7 text-[#fff]'>
+        <div className='soft-skills-container lg:mt-8 flex justify-center gap-7 text-[#fff]'>
             {softSkills.map(skill => (
                 <p key={skill.id}
                     className='bg-[#6F7B98]'>
