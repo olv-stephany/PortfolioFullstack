@@ -67,21 +67,21 @@ const CardsStacks = () => {
             </div>
             <div className="frontend-container">
                 <h2>Front-End</h2>
-                <div className="info">
-                    <div className=' gap-5 flex flex-wrap icon-grid ml-5'>
+                <div className="info justify-center">
+                    <div className=' gap-5 flex justify-center flex-wrap icon-grid ml-9'>
                         {frontIcons.map(icon => (
                             <img key={icon.id} src={icon.image} alt={icon.alt}></img>
                         ))}
                     </div>
-                    <div className="more-details-container flex items-center gap-5 mb-5 mt-5">
+                    <div className="more-details-container flex items-center gap-5 mb-5 mt-5 ml-1">
                         <FaCircle className=" text-[#AA9D8A]" style={{ fontSize: "10px" }} />
                         <p>Responsividade e Acessibilidade</p>
                     </div>
                 </div>
             </div>
-            <div className="backend-container">
+            <div className="backend-container ">
                 <h2>Back-End</h2>
-                <div className=' gap-6 flex flex-wrap icon-grid ml-10'>
+                <div className=' gap-6 flex justify-center flex-wrap icon-grid ml-10'>
                     {backIcons.map(icon => (
                         <img key={icon.id} src={icon.image} alt={icon.alt}></img>
                     ))}
