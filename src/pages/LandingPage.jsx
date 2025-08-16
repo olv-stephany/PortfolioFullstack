@@ -18,9 +18,34 @@ import Menu from "../components/Menu";
 import pages from "../images/stickers/pages-sticker.png";
 import book from "../images/stickers/book-sticker.png";
 import columns from "../images/Vector.png";
-import statue from "../images/stickers/statue-sticker.png"
+import statue from "../images/stickers/statue-sticker.png";
+
+import github from "../images/icons/github-icon-media.png";
+import email from "../images/icons/email-icon-media.png";
+import linkedin from "../images/icons/linkedin-icon-media.png";
 
 const LandingPage = () => {
+  const socialMedia = [
+    {
+      id: 1,
+      image: email,
+      link: "https://outlook.live.com/mail/0/deeplink/compose?to=stephanyodev@outlook.com",
+      nome: "stephanyodev@outlook.com",
+    },
+    {
+      id: 2,
+      image: linkedin,
+      link: "www.linkedin.com/in/stephany-oliveira01",
+      nome: "Stephany Oliveira",
+    },
+    {
+      id: 3,
+      image: github,
+      link: "https://github.com/olv-stephany",
+      nome: "olv-stephany",
+    },
+  ];
+
   return (
     <>
       <section className="welcome-container">
@@ -115,27 +140,49 @@ const LandingPage = () => {
       </section>
       <section className="projects-container bg-[#6F7B98] w-screen h-[90vh]">
         <div className="projects-header">
-          <h2 className="pt-20 lg:text-5xl font-semibold text-[#fff] italic">Projetos</h2>
+          <h2 className="pt-20 lg:text-5xl font-semibold text-[#fff] italic">
+            Projetos
+          </h2>
         </div>
         <div className="projects-body">
-        <CardsProjects/>
+          <CardsProjects />
         </div>
       </section>
-      <section className="contacts-container bg-[#d9d9d9]  w-full h-[90vh] overflow-x-hidden bg-cover bg-center">
-        <div className="contacts-header ml-[30vw] mt-[20vh]">
-          <h2>Vamos Conversar?</h2>
-          <p>Se você quiser colaborar, conversar ou tiver interesse no meu trabalho, é só me chamar!</p>
+      <section className="contacts-container bg-[#d9d9d9] w-full h-full overflow-x-hidden bg-cover bg-center ">
+        <div className="contacts-header ml-[45vw] border-4 border-[#6F7B98] w-[40rem] h-[25rem] top-[10vh] relative bg-[#6f7b9817] p-5 flex-col justify-center flex items-center ">
+          <h2 className="font-medium text-3xl p-5 ">Vamos Conversar?</h2>
+          <p className="w-[550px] text-lg mb-2 font-medium">
+            Se você quiser colaborar, conversar ou tiver interesse no meu
+            trabalho, é só me chamar!
+          </p>
           <div className="social-media-container">
-
+            {socialMedia.map((social) => (
+              <span key={social.id} className="flex pt-3">
+                <img src={social.image} alt="" className="mr-[5vh]" />
+                <a
+                  href={social.link}
+                  target="_blank"
+                  className="flex items-center font-bold text-lg"
+                >
+                  {social.nome}
+                </a>
+              </span>
+            ))}
           </div>
         </div>
-        <div className="contacts-body mr-[30vw]">
+        <div className="contacts-body ml-[15vw] mt-0">
           <img src={statue} alt="" />
         </div>
       </section>
       <footer className=" bg-[#333533] w-full bg-cover bg-center h-[15vh]">
-        <div className="flex flex-col justify-center">
-          <p className="text-[#fff] pt-10 justify-end">stephany</p>
+        <div className="flex justify-center text-center gap-5 items-center">
+          <p className="text-[#fff] pt-10">© 2025 Stephany Oliveira</p>
+          <ul className="flex text-white gap-4 font-medium pt-10">
+            <li>Habilidades</li>
+            <li>Sobre</li>
+            <li>Projetos</li>
+            <li>Contato</li>
+          </ul>
         </div>
       </footer>
     </>

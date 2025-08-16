@@ -63,7 +63,7 @@ const CardsProjects = () => {
                     key={tag.id}
                     className=" bg-[#AA9D8A] pl-6 pr-9 rounded-sm m-0 "
                   >
-                    <p className="text-start flex">{tag.tag}</p>
+                    <p className="text-start flex font-light text-black">{tag.tag}</p>
                   </div>
                 ))}
               </div>
