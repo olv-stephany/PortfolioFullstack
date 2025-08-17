@@ -10,42 +10,104 @@ body {
   color: #333533;
 }
 
-.welcome-body h1, h2{
+.welcome-body h1,
+h2 {
   font-family: "Rubik", sans-serif;
 }
 
-.welcome-body ul, li{
+.welcome-body ul,
+li {
   font-family: "Maven Pro", sans-serif;
   letter-spacing: 1px;
 }
 
-.skills-header h2{
+.skills-header h2 {
   font-family: "Maven Pro", sans-serif;
   letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
 }
 
-p{
+p {
   font-family: "Maven Pro", sans-serif;
 }
-.about-container, .contacts-container{
-  background-image: url('../images/background-aboutme.png');
-  object-fit:cover;
+.about-container,
+.contacts-container {
+  background-image: url("../images/background-aboutme.png");
+  object-fit: cover;
   width: 100%;
   background-repeat: no-repeat;
 }
-.about-container h2{
+.about-container h2 {
   font-family: "Maven Pro", sans-serif;
 }
-.projects-container{
+.projects-container {
   width: 100%;
 }
-.projects-container h2{
+.project-animation{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+.project-animation:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.projects-container h2 {
   font-family: "Maven Pro", sans-serif;
   letter-spacing: 2px;
 }
-footer{
-  background-image: url('../images/background-footer.png');
-  object-fit:cover;
+
+/*Animations - scroll in projects-container (zoom in + fade in + scroll) */
+@keyframes appear {
+  from {
+    opacity: 0;
+    translate: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.block-animation {
+  animation: appear linear;
+  animation-timeline: view(
+
+  ); /*animação so acontece quando o elemento está visivel na tela*/
+  animation-range: entry 2% cover 40%; /*faz o elemento entrar quando aparecer na tela*/
+}
+
+/*Animation - Typing Writer on Skills Title*/
+.skills-header h2::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #d9d9d9 !important;
+  border-left: 4px solid #6f7b98;
+  animation: typing 10s steps(10) infinite, blink 0.5s infinite ;
+}
+@keyframes typing{
+  0%   { width: 100%; } 
+  40%  { width: 0%; }  
+  60%  { width: 0%; }    
+  100% { width: 100%; } 
+}
+@keyframes blink {
+  50% {
+    border-left-color: transparent;
+  }
+}
+
+
+footer {
+  background-image: url("../images/background-footer.png");
+  object-fit: cover;
   width: 100%;
   background-repeat: no-repeat;
 }

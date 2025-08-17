@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/LandingPage.css";
+import { motion } from "framer-motion";
 
 //icons
 import { FaGithub } from "react-icons/fa";
@@ -13,6 +14,7 @@ import ExperienceCard from "../components/ExperienceCard";
 import ProfileInfo from "../components/ProfileInfo";
 import CardsProjects from "../components/CardsProjects";
 import Menu from "../components/Menu";
+import About from "../components/About";
 
 //images
 import pages from "../images/stickers/pages-sticker.png";
@@ -48,7 +50,12 @@ const LandingPage = () => {
 
   return (
     <>
-      <section className="welcome-container">
+      <motion.section
+        initial={{ opacity: 0 }} //animação fade in
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        className="welcome-container"
+      >
         <div className="welcome-header">
           <FrameSticker />
         </div>
@@ -79,10 +86,10 @@ const LandingPage = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
       <section className="skills-container">
         <div className="skills-header">
-          <h2 className="lg:text-5xl font-semibold mt-10">Habilidades</h2>
+          <h2 className="lg:text-5xl font-semibold mt-10 skills-title">Habilidades </h2>
         </div>
         <div className="skills-body">
           <div className="relative z-10">
@@ -107,28 +114,29 @@ const LandingPage = () => {
           </div>
           <div className="about-body text-start lg:flex">
             <div>
-              <div className="w-155 text-lg text-[#fff] italic font-medium">
-                <p className="mb-5">
+              <div className="w-155 text-lg text-[#fff] italic font-medium ">
+                {/*<p className="mb-5 typing-effect">
                   Estudante de Análise e Desenvolvimento de Sistemas, nascida em
                   16 de março de 2007, apaixonada por transformar ideias em
                   experiências digitais.{" "}
                 </p>
-                <p className="mb-5">
+                <p className="mb-5 typing-effect">
                   Desde pequena sou fascinada pelas tecnologias do universo
                   Marvel, o que despertou meu interesse em criar soluções com
                   propósito e me levou à programação.
                 </p>
-                <p className="mb-5">
+                <p className="mb-5 typing-effect">
                   Atualmente estudo Desenvolvimento Fullstack, com foco em
                   UI/UX, Front-End moderno e Back-end com Node.js. Gosto de unir
                   lógica, design e empatia para criar interfaces funcionais e
                   intuitivas.
                 </p>
-                <p className="mb-5">
+                <p className="mb-5 typing-effect">
                   Meu objetivo é crescer profissionalmente, colaborando em
                   projetos reais que impactem positivamente o dia a dia das
                   pessoas.
-                </p>
+                </p>*/}
+                <About/>
               </div>
               <ExperienceCard />
             </div>
@@ -148,8 +156,8 @@ const LandingPage = () => {
           <CardsProjects />
         </div>
       </section>
-      <section className="contacts-container bg-[#d9d9d9] w-full h-full overflow-x-hidden bg-cover bg-center ">
-        <div className="contacts-header ml-[45vw] border-4 border-[#6F7B98] w-[40rem] h-[25rem] top-[10vh] relative bg-[#6f7b9817] p-5 flex-col justify-center flex items-center ">
+      <section className="contacts-container bg-[#d9d9d9] w-full h-full overflow-x-hidden bg-cover bg-center mt-0">
+        <div className="contacts-header ml-[40vw] border-4 border-[#6F7B98] w-[40rem] h-[25rem] top-[5vh] relative bg-[#6f7b9817] p-5 flex-col justify-center flex items-center ">
           <h2 className="font-medium text-3xl p-5 ">Vamos Conversar?</h2>
           <p className="w-[550px] text-lg mb-2 font-medium">
             Se você quiser colaborar, conversar ou tiver interesse no meu
@@ -170,7 +178,7 @@ const LandingPage = () => {
             ))}
           </div>
         </div>
-        <div className="contacts-body ml-[15vw] mt-0">
+        <div className="contacts-body ml-[14vw] mt-0">
           <img src={statue} alt="" />
         </div>
       </section>
