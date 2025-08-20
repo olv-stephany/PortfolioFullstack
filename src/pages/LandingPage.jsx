@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/LandingPage.css";
-import { motion } from "framer-motion";
+
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 //icons
 import { FaGithub } from "react-icons/fa";
@@ -37,16 +39,31 @@ const LandingPage = () => {
     {
       id: 2,
       image: linkedin,
-      link: "www.linkedin.com/in/stephany-oliveira01",
-      nome: "Stephany Oliveira",
+      link: "https://www.linkedin.com/in/stephany-oliveira01/",
+      nome: "linkedin.com/in/stephany-oliveira01",
     },
     {
       id: 3,
       image: github,
       link: "https://github.com/olv-stephany",
-      nome: "olv-stephany",
+      nome: "github.com/olv-stephany",
     },
   ];
+
+  const ref = useRef(null)
+  const isInView = useInView(ref, {amount: 0.7});
+
+  const containerVariants ={
+    hidden: {},
+    visible:{
+      transition:{staggerChildren: 0.5}
+    }
+  };
+
+  const itemsVariants = {
+    hidden:{ opacity: 0, y: -20},
+    visible:{opacity: 1, y:0 , transition: {duration: 0.8}}
+  };
 
   return (
     <>
@@ -163,9 +180,14 @@ const LandingPage = () => {
             Se você quiser colaborar, conversar ou tiver interesse no meu
             trabalho, é só me chamar!
           </p>
-          <div className="social-media-container">
+          <motion.div 
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView? "visible" : "hidden"}
+          className="social-media-container">
             {socialMedia.map((social) => (
-              <span key={social.id} className="flex pt-3">
+              <motion.span key={social.id} className="flex pt-3" variants={itemsVariants}>
                 <img src={social.image} alt="" className="mr-[5vh]" />
                 <a
                   href={social.link}
@@ -174,9 +196,9 @@ const LandingPage = () => {
                 >
                   {social.nome}
                 </a>
-              </span>
+              </motion.span>
             ))}
-          </div>
+          </motion.div>
         </div>
         <div className="contacts-body ml-[14vw] mt-0">
           <img src={statue} alt="" />
