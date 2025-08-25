@@ -30,7 +30,7 @@ export default function About() {
     <div className="about-body text-start lg:flex">
       <motion.div
         ref={ref}
-        className="w-155 text-lg text-[#fff] italic font-medium"
+        className="lg:w-155  lg:text-lg text-[#fff] italic font-medium"
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"} 
@@ -38,7 +38,7 @@ export default function About() {
         {paragraphs.map((p, i) => (
           <motion.p
             key={i}
-            className="mb-5"
+            className="mb-5 pl-1"
             variants={paragraphVariants}
             transition={{ duration: 1.2 }}
           >

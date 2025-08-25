@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Menu = () => {
   const items = ["Habilidades", "Sobre", "Projetos", "Contato"];
   return (
-    <ul className="flex gap-6 mt-3 justify-center lg:text-2xl">
+    <ul className="flex gap-6  mt-3 justify-center lg:text-2xl text-1xl">
       {items.map((item, i) => (
         <motion.li
           key={i}

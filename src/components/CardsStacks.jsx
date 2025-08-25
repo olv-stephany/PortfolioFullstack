@@ -91,8 +91,9 @@ const CardsStacks = () => {
   ];
 
   return (
-    <div className="stacks-container justify-center mt-5 flex gap-8">
-      <div className="ui-container">
+    <div className="stacks-container mt-5 mb-5 gap-2
+    grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center grid max-w-[1200px] mx-auto">
+      <div className="ui-container w-full max-w-sm ">
         <h2>UI/UX Design</h2>
         <div className="info">
           <span className="flex gap-3 ml-5">
@@ -115,15 +116,14 @@ const CardsStacks = () => {
       <div className="frontend-container">
         <h2>Front-End</h2>
         <div className="info justify-center">
-          <div className=" gap-5 flex justify-center flex-wrap icon-grid ml-9">
+          <div className=" gap-5 flex justify-center flex-wrap icon-grid ml-10">
             {frontIcons.map((icon) => (
-              <img key={icon.id} src={icon.image} alt={icon.alt}></img>
+              <img key={icon.id} src={icon.image} alt={icon.alt} className="h-10 w-10" ></img>
             ))}
           </div>
           <div className="more-details-container flex items-center gap-5 mb-5 mt-5 ml-1">
             <FaCircle
-              className=" text-[#AA9D8A]"
-              style={{ fontSize: "10px" }}
+              className="text-[#AA9D8A] text-[8px]"
             />
             <p>Responsividade e Acessibilidade</p>
           </div>
@@ -131,9 +131,9 @@ const CardsStacks = () => {
       </div>
       <div className="backend-container ">
         <h2>Back-End</h2>
-        <div className=" gap-6 flex justify-center flex-wrap icon-grid ml-10">
+        <div className=" gap-5 flex justify-center flex-wrap icon-grid ml-10">
           {backIcons.map((icon) => (
-            <img key={icon.id} src={icon.image} alt={icon.alt}></img>
+            <img key={icon.id} src={icon.image} alt={icon.alt} ></img>
           ))}
         </div>
         <div className="more-details-container ml-4">
@@ -146,8 +146,7 @@ const CardsStacks = () => {
           </div>
           <div className=" flex items-center gap-5 mb-5">
             <FaCircle
-              className=" text-[#AA9D8A]"
-              style={{ fontSize: "10px" }}
+              className="text-[#AA9D8A] text-[8px]"
             />
             <p>CRUDS e MVC Pattern</p>
           </div>

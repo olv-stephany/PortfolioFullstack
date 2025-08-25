@@ -50,19 +50,19 @@ const LandingPage = () => {
     },
   ];
 
-  const ref = useRef(null)
-  const isInView = useInView(ref, {amount: 0.7});
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.7 });
 
-  const containerVariants ={
+  const containerVariants = {
     hidden: {},
-    visible:{
-      transition:{staggerChildren: 0.5}
-    }
+    visible: {
+      transition: { staggerChildren: 0.5 },
+    },
   };
 
   const itemsVariants = {
-    hidden:{ opacity: 0, y: -20},
-    visible:{opacity: 1, y:0 , transition: {duration: 0.8}}
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
   return (
@@ -77,15 +77,17 @@ const LandingPage = () => {
           <FrameSticker />
         </div>
         <div className="welcome-body flex flex-col lg:justify-center items-center h-screen">
-          <h2 className="lg:text-6xl font-bold flex justify-start lg:mr-[20rem]">
-            Prazer, eu sou a
-          </h2>
-          <h1 className="effect lg:text-8xl text-[#6F7B98] font-bold lg:ml-[15rem]">
-            Stephany
-          </h1>
+          <div className="bg-mobile h-[20vh] w-full flex flex-col justify-center items-center">
+            <h2 className="lg:text-6xl md:text-5xl text-4xl font-bold flex justify-start lg:mr-[20rem] sm:mr-[10rem] text-black lg:text-[#333533]">
+              Prazer, eu sou a
+            </h2>
+            <h1 className="effect lg:text-8xl md:text-7xl text-6xl lg:text-[#6F7B98] text-[#2e3850] font-bold lg:ml-[15rem] sm:ml-[10rem]">
+              Stephany
+            </h1>
+          </div>
           <Menu />
         </div>
-        <div className="welcome-footer flex opacity-40 justify-end absolute bottom-[2px] right-40">
+        <div className="welcome-footer lg:flex opacity-40 lg:justify-end lg:absolute bottom-[2px] lg:right-40 justify-center hidden  lg:visible">
           <a href="#" target="_blank" rel="noopener noreferrer">
             <AiOutlineBehanceSquare fontSize={"35px"} />
           </a>
@@ -104,9 +106,11 @@ const LandingPage = () => {
           </div>
         </div>
       </motion.section>
-      <section className="skills-container">
+      <section className="skills-container -mt-130 lg:mt-0">
         <div className="skills-header">
-          <h2 className="lg:text-5xl font-semibold mt-10 skills-title">Habilidades </h2>
+          <h2 className="text-5xl font-semibold lg:mt-10 sm:mb-10 lg:mb-0 skills-title">
+            Habilidades{" "}
+          </h2>
         </div>
         <div className="skills-body">
           <div className="relative z-10">
@@ -121,51 +125,30 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-      <section className="about-container bg-[#6F7B98] flex mt-[10vh] w-screen h-screen bg-cover bg-center">
-        <div className="justify-center lg:pl-[15rem] lg:pr-[15rem]">
-          <div className="about-header flex">
-            <h2 className="text-5xl font-semibold italic text-[#fff] p-5 pl-0 mt-[5rem]">
+      <section className="about-container bg-[#6F7B98] flex flex-col lg:flex-row lg:mt-[10vh] w-full xl:h-screen bg-cover bg-center">
+        <div className="w-full px-4 sm:px-8 xl:px-[15rem]">
+          <div className="about-header flex  items-start lg:items-center">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold italic text-white mt-16 lg:mt-20">
               Sobre mim
             </h2>
-            <img src={columns} alt="" className="pt-20 pb-7 pl-80" />
+            <img src={columns} alt="" className="xl:pt-20 xl:pb-7 lg:pl-80 pl-20 pt-10 " />
           </div>
-          <div className="about-body text-start lg:flex">
-            <div>
-              <div className="w-155 text-lg text-[#fff] italic font-medium ">
-                {/*<p className="mb-5 typing-effect">
-                  Estudante de Análise e Desenvolvimento de Sistemas, nascida em
-                  16 de março de 2007, apaixonada por transformar ideias em
-                  experiências digitais.{" "}
-                </p>
-                <p className="mb-5 typing-effect">
-                  Desde pequena sou fascinada pelas tecnologias do universo
-                  Marvel, o que despertou meu interesse em criar soluções com
-                  propósito e me levou à programação.
-                </p>
-                <p className="mb-5 typing-effect">
-                  Atualmente estudo Desenvolvimento Fullstack, com foco em
-                  UI/UX, Front-End moderno e Back-end com Node.js. Gosto de unir
-                  lógica, design e empatia para criar interfaces funcionais e
-                  intuitivas.
-                </p>
-                <p className="mb-5 typing-effect">
-                  Meu objetivo é crescer profissionalmente, colaborando em
-                  projetos reais que impactem positivamente o dia a dia das
-                  pessoas.
-                </p>*/}
-                <About/>
+          <div className="about-body flex flex-col lg:flex-row gap-8 mt-8  text-center lg:text-start">
+            <div className="">
+              <div className="text-white italic font-medium text-base sm:text-lg lg:text-lg lg:w-full ">
+                <About />
               </div>
               <ExperienceCard />
             </div>
-            <div>
+            <div className="flex-1 mt-8 lg:mt-0 flex justify-center lg:w-10 xl:w-0">
               <ProfileInfo />
             </div>
           </div>
         </div>
       </section>
-      <section className="projects-container bg-[#6F7B98] w-screen h-[90vh]">
+      <section className="projects-container bg-[#6F7B98] w-full lg:h-[90vh] h-[70vh]">
         <div className="projects-header">
-          <h2 className="pt-20 lg:text-5xl font-semibold text-[#fff] italic">
+          <h2 className="lg:pt-20 pt-10 lg:text-5xl font-semibold text-[#fff] italic text-4xl">
             Projetos
           </h2>
         </div>
@@ -173,41 +156,58 @@ const LandingPage = () => {
           <CardsProjects />
         </div>
       </section>
-      <section className="contacts-container bg-[#d9d9d9] w-full h-full overflow-x-hidden bg-cover bg-center mt-0">
-        <div className="contacts-header ml-[40vw] border-4 border-[#6F7B98] w-[40rem] h-[25rem] top-[5vh] relative bg-[#6f7b9817] p-5 flex-col justify-center flex items-center ">
-          <h2 className="font-medium text-3xl p-5 ">Vamos Conversar?</h2>
-          <p className="w-[550px] text-lg mb-2 font-medium">
-            Se você quiser colaborar, conversar ou tiver interesse no meu
-            trabalho, é só me chamar!
-          </p>
-          <motion.div 
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView? "visible" : "hidden"}
-          className="social-media-container">
-            {socialMedia.map((social) => (
-              <motion.span key={social.id} className="flex pt-3" variants={itemsVariants}>
-                <img src={social.image} alt="" className="mr-[5vh]" />
-                <a
-                  href={social.link}
-                  target="_blank"
-                  className="flex items-center font-bold text-lg"
+      <section className="contacts-container bg-[#d9d9d9] w-full h-full overflow-x-hidden bg-cover bg-center mt-0 flex flex-col lg:flex-row lg:items-center lg:justify-center gap-10">
+        <div className="flex flex-col lg:flex-row-reverse max-w-[80%] lg:max-w-[60rem] mx-auto gap-10">
+          <div
+            className="contacts-header 
+            border-4 border-[#6F7B98] 
+            bg-[#6f7b9817] p-5 flex flex-col justify-center items-center
+            relative
+            w-full max-w-[45rem] h-auto 
+            mx-auto mt-6 
+            lg:mt-[5vh] lg:h-[25rem] lg:w-[40rem]  "
+          >
+            <h2 className="font-medium text-2xl lg:text-3xl p-5 text-center">
+              Vamos Conversar?
+            </h2>
+            <p className="text-base lg:text-lg mb-2 font-medium text-center lg:w-[550px] w-full">
+              Se você quiser colaborar, conversar ou tiver interesse no meu
+              trabalho, é só me chamar!
+            </p>
+            <motion.div
+              ref={ref}
+              variants={containerVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              className="social-media-container"
+            >
+              {socialMedia.map((social) => (
+                <motion.span
+                  key={social.id}
+                  className="flex pt-3"
+                  variants={itemsVariants}
                 >
-                  {social.nome}
-                </a>
-              </motion.span>
-            ))}
-          </motion.div>
-        </div>
-        <div className="contacts-body ml-[14vw] mt-0">
-          <img src={statue} alt="" />
+                  <img src={social.image} alt="" className="mr-[5vh]" />
+                  <a
+                    href={social.link}
+                    target="_blank"
+                    className="flex items-center font-bold lg:text-lg text-sm "
+                  >
+                    {social.nome}
+                  </a>
+                </motion.span>
+              ))}
+            </motion.div>
+          </div>
+          <div className="contacts-body flex justify-center mt-10 lg:mt-[50vh]">
+            <img src={statue} alt="" className="max-w-[80%] lg:max-w-[30rem] " />
+          </div>
         </div>
       </section>
-      <footer className=" bg-[#333533] w-full bg-cover bg-center h-[15vh]">
-        <div className="flex justify-center text-center gap-5 items-center">
-          <p className="text-[#fff] pt-10">© 2025 Stephany Oliveira</p>
-          <ul className="flex text-white gap-4 font-medium pt-10">
+      <footer className=" bg-[#333533] w-screen bg-cover bg-center h-[15vh]">
+        <div className="flex flex-col xl:flex-row justify-center text-center gap-5 items-center xl:pt-15">
+          <p className="text-[#fff] pt-5 lg:pt-0">© 2025 Stephany Oliveira</p>
+          <ul className="flex text-white gap-4 font-medium">
             <li>Habilidades</li>
             <li>Sobre</li>
             <li>Projetos</li>
