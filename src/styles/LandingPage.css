@@ -21,6 +21,16 @@ li {
   letter-spacing: 1px;
 }
 
+/*background que aparecerá em versões mobile*/
+.bg-mobile{
+ background-image: url("../images/architeture-header-mobile.jpg");
+ background-size: cover;
+ background-position: center;
+ 
+}
+
+/* #2e3850 --> azul para celular*/
+
 .skills-header h2 {
   font-family: "Maven Pro", sans-serif;
   letter-spacing: 0.5px;
@@ -74,9 +84,7 @@ p {
 
 .block-animation {
   animation: appear linear;
-  animation-timeline: view(
-
-  ); /*animação so acontece quando o elemento está visivel na tela*/
+  animation-timeline: view(); /*animação so acontece quando o elemento está visivel na tela*/
   animation-range: entry 2% cover 40%; /*faz o elemento entrar quando aparecer na tela*/
 }
 
@@ -110,4 +118,12 @@ footer {
   object-fit: cover;
   width: 100%;
   background-repeat: no-repeat;
+}
+
+
+/*Media Queries*/
+@media (min-width: 1023px) {
+  .bg-mobile{
+    background-image: none;
+  }
 }

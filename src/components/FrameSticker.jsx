@@ -8,7 +8,7 @@ const FrameSticker = () => {
       <img
         src={WallLeft}
         alt="parede azul posicionada na esquerda detalhada em relevos de flores"
-        className="hidden lg:block absolute top-6 left-0 h-screen w-auto object-cover z-10 fade-in pointer-events-none"
+        className="hidden lg:block absolute top-3 left-0 h-screen w-auto object-cover z-10 fade-in pointer-events-none"
       />
       <img
         src={WallRight}

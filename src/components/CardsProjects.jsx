@@ -18,9 +18,9 @@ const projects = [
 
 const CardsProjects = () => {
   return (
-    <div className="flex justify-center mt-15 w-full gap-5 ">
+    <div className="flex justify-center lg:mt-15 mt-10 w-full gap-5 ">
       {projects.map((project) => (
-        <div key={project.id} className="p-5 pt-0 block-animation">
+        <div key={project.id} className="lg:p-5 pt-0 block-animation">
           <div className="project-container bg-[#d9d9d9] rounded-lg h-[370px] w-[360px] project-animation">
             <div className="project-header">
               <div className="justify-center items-center flex flex-col">

@@ -42,7 +42,7 @@ const ExperienceCard = () => {
   return (
     <motion.div
       ref={expRef}
-      className="rounded-sm pl-4 pt-2 border-3 border-white/100  w-170 text-white"
+      className="rounded-sm pl-4 pt-2 border-3 border-white/100 w-full lg:w-170 text-white ml-2 lg:ml-0"
       variants={expContainerVariants}
       initial="hidden"
       animate={expInView ? "visible" : "hidden"}
@@ -59,14 +59,14 @@ const ExperienceCard = () => {
         <div className="flex-1">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-full text-left flex items-center gap-4"
+            className="w-full text-left flex items-center lg:gap-4 gap-2"
           >
             <p className="font-semibold">
               Capacita TIC20 (UECE/ Atlântico) – Projeto Fullstack com foco em
               Dashboard
             </p>
             <span
-              className={`text-white text-xl transform transition-transform duration-300 ${
+              className={`text-white text-xl transform transition-transform duration-300 p-3 ${
                 isOpen ? "rotate-180" : ""
               }`}
             >

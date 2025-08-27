@@ -6,19 +6,19 @@ const SoftSkills = () => {
   const softSkills = [
     {
       id: 1,
-      nome: "Trabalho em equipe",
-    },
-    {
-      id: 2,
-      nome: "Criatividade",
-    },
-    {
-      id: 3,
       nome: "Curiosidade e aprendizado",
     },
     {
-      id: 4,
+      id: 2,
       nome: "Atenção aos detalhes",
+    },
+    {
+      id: 3,
+      nome: "Trabalho em equipe",
+    },
+    {
+      id: 4,
+      nome: "Criatividade",
     },
   ];
 
@@ -44,14 +44,14 @@ const SoftSkills = () => {
 
   return (
     <motion.div
-      className="soft-skills-container lg:mt-8 flex justify-center gap-7 text-[#fff]"
+      className="soft-skills-container lg:mt-8 flex flex-wrap justify-center gap-3 sm:gap-5 lg:gap-9 mt-10 lg:mt-0 text-[#fff]"
       ref={ref}
       variants={container}
       initial="hidden"
       animate={isInView? "visible": "hidden"}
     >
       {softSkills.map((skill) => (
-        <motion.p key={skill.id} className="bg-[#6F7B98]" variants={item}>
+        <motion.p key={skill.id} className="bg-[#6F7B98] px-2 py-1 text-xs sm:px-3 sm:py-1.5 sm:text-sm lg:px-4 lg:py-2 lg-text-base" variants={item}>
           {skill.nome}
         </motion.p>
       ))}
