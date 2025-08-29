@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import vibraniumImage from "../images/projects/v-api.jpg";
 import { FiChevronRight } from "react-icons/fi";
 
@@ -13,7 +14,7 @@ const projects = [
       { id: 3, tag: "Node.js" },
       { id: 4, tag: "PrismaORM" },
     ],
-  }
+  },
 ];
 
 const CardsProjects = () => {
@@ -41,17 +42,20 @@ const CardsProjects = () => {
                     key={tag.id}
                     className=" bg-[#AA9D8A] pl-6 pr-9 rounded-sm m-0 "
                   >
-                    <p className="text-start flex font-light text-black">{tag.tag}</p>
+                    <p className="text-start flex font-light text-black">
+                      {tag.tag}
+                    </p>
                   </div>
                 ))}
               </div>
               <div className="flex justify-end mr-5 mt-10">
-                <button
-                  to={`/projetos/${project.id}`}
-                  className="bg-[#AA9D8A] rounded-md pl-20 p-2 hover:bg-[#9a8d7c] transition flex items-center"
-                >
-                  <FiChevronRight className="text-white text-lg" />
-                </button>
+                <Link  to={`/project/${project.id}`}>
+                  <button
+                    className="bg-[#AA9D8A] rounded-md pl-20 p-2 hover:bg-[#9a8d7c] transition flex items-center"
+                  >
+                    <FiChevronRight className="text-white text-lg" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
