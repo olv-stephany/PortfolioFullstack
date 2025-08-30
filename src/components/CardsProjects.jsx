@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import vibraniumImage from "../images/projects/v-api.jpg";
+import vibraniumImage from "../images/projects/v-api/v-api.jpg";
 import { FiChevronRight } from "react-icons/fi";
 
 const projects = [
